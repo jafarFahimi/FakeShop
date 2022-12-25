@@ -1,0 +1,6 @@
+// npm i redux react-redux
+export const ActionTypes = {
+  SET_PRDOUCTS: "SET_PRDOUCTS",
+  SELECTED_PRODUCTS: "SELECTED_PRODUCTS",
+  REMOVE_SELECTED_PRODUCTS: "REMOVE_SELECTED_PRODUCTS",
+};

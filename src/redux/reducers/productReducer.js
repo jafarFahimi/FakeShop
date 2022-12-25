@@ -7,7 +7,7 @@ const initState = [
   },
 ];
 
-const productReducer = (state, { type, payload }) => {
+const productReducer = (state = initState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRDOUCTS:
       return state;

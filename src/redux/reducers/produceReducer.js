@@ -7,7 +7,7 @@ const initState = [
   },
 ];
 
-const productReducer = (state = initState, { type, payload }) => {
+const produceReducer = (state = initState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRDOUCTS:
       return state;
@@ -15,4 +15,4 @@ const productReducer = (state = initState, { type, payload }) => {
       return state;
   }
 };
-export default productReducer;
+export default produceReducer;

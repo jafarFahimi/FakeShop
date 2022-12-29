@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.js";
 import ProductDetail from "./components/ProductDetail.js";
 import ProductListing from "./components/ProductListing.js";
@@ -9,11 +9,13 @@ function App() {
     // npm audit fix , npm i react-router-dom
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Switch>
-          <Header />
-          <ProductComponent />
-        </Switch>
+        <Header /> 
+        <Routes>
+          <Route path="/" exact element={<ProductListing />} />
+          <Route path="/product/:productId" exact element={<ProductDetail />} />
+          <Route>404 Not Found!</Route>
+        </Routes>
+        <ProductComponent />
       </BrowserRouter>
     </div>
   );

@@ -1,7 +1,7 @@
 import { ActionTypes } from "../constants/action_types";
 export const setProducts = (products) => {
   return {
-    type: ActionTypes.SET_PRDOUCTS,
+    type: ActionTypes.SET_PRODUCTS,
     payload: products,
     // payload means max burden, useful burden
   };

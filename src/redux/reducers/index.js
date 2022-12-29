@@ -2,5 +2,5 @@
 import produceReducer from "./produceReducer";
 import { combineReducers } from "redux"; // notice combineReducer is false.
 export const reducers = combineReducers({
-  allReducers: produceReducer,
+  allProducts: produceReducer,
 });

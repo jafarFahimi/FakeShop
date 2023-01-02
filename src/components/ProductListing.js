@@ -1,29 +1,33 @@
+// here we download & set/list product details on store // it's path="/"&first comp in App.js <Routes>
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import { useEffect } from "react";
-import {} from "../redux/actions/ProduceActions.js";
+import { useEffect, useState } from "react";
+import { setProducts } from "../redux/actions/ProduceActions.js";
+import ProductComponent from "./ProductComponent.js";
 
 const ProductListing = () => {
-  const products = useSelector((state) => state);
+  const [hasRes, setHasRes] = useState(false); // render data when they arrives.
   const dispatch = useDispatch();
 
   const fetchProducts = async () => {
-    const response = await axios.get("https://fakestoreapi.com/products").catch((err) => {
-      console.log(err, err.message);
-    });
-    // dispatch(setProducts(response.data));
-    dispatch(setProducts([1,23,3]));
-    console.log(response.data);
+    axios
+      .get(
+        "https://fakestoreapi.com/products"
+        // , { headers: { "Accept-Encoding": "gzip" } }
+      )
+      .then((response) => {
+        dispatch(setProducts(response.data));
+        setHasRes(true);
+      })
+      .catch((err) => {
+        console.log(err, "Err");
+      });
+    // to store data in ur store we must 1.download data, 2.dispatch an action
+    // console.log(response); // log to know what to store!
   };
-  console.log("products; 💕💕💕💕🏆🏆🏆🏆", products);
   useEffect(() => {
     fetchProducts();
   }, []);
-
-  return (
-    <div>
-      <h2>Product Listing File</h2>
-    </div>
-  );
+  return <div>{hasRes && <ProductComponent/>}</div>;
 };
 export default ProductListing;

@@ -5,12 +5,14 @@ const ProductComponent = () => {
   const renderList = products.map((product) => {
     const { price, id, title, image, category, description, rating } = product;
     return (
-      <Link key={id} to={`/product/${id}`} className="w-25">
-        <div className=" w-25 m-2">
-          <p>{title}</p>
-          <img src={image} className="w-25" alt={title} />
-          <p>$ {price}</p>
-          <h5>{category}</h5>
+      <Link key={id} to={`/product/${id}`} className="text-decoration-none text-dark w-25 mb-4">
+        <div className="text-start w-75">
+          <div className="d-flex justify-content-center align-item-center h-300px mb-2">
+            <img src={image} className="w-100 h-100" alt={title} />
+          </div>
+          <b>{title}</b>
+          <b className="d-block fs-4">$ {price}</b>
+          <small className="text-lead">{category}</small>
         </div>
       </Link>
     );
@@ -18,9 +20,7 @@ const ProductComponent = () => {
 
   return (
     <div className="container-lg">
-      <main className="d-flex row flex-wrap justify-content-center bg-info align-item-center">
-        {renderList}
-      </main>
+      <main className="d-flex flex-wrap justify-content-center bg-light align-item-center">{renderList}</main>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.js";
 import ProductDetail from "./components/ProductDetail.js";
 import ProductListing from "./components/ProductListing.js";
-import ProductComponent from "./components/ProductComponent.js";
+// import ProductComponent from "./components/ProductComponent.js";
 function App() {
   return (
     <div className="App">

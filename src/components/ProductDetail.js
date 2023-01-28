@@ -18,6 +18,7 @@ const ProductDetail = () => {
     axios
       .get(`https://fakestoreapi.com/products/${productId}`)
       .then((res) => {
+        console.log(res, " fetched data");
         dispatch(selectedProduct(res.data));
       })
       .catch((err) => alert(err));
@@ -25,15 +26,14 @@ const ProductDetail = () => {
   // console.log(product); // check if state has been changed by our dispatch
   // Object { productId: "1" }
   useEffect(() => {
-    {
-      productId && productId !== "" && fetchProductDetail();
-    }
+    productId && productId !== "" && fetchProductDetail();
+
     return () => {
       dispatch(removeSelectedProduct()); // remember to call on dispatch
       // on going from 1 product to other, don't display 1st product, show "Loading"
     };
   }, [productId]);
-  
+
   return (
     <div>
       {Object.keys(product).length === 0 ? (
@@ -41,7 +41,7 @@ const ProductDetail = () => {
       ) : (
         <div className="container d-flex justify-content-center align-items-center bg-info vh-100">
           <div className="w-75 d-flex justify-content-center align-items-center border-5 shadow">
-            <img className="w-25" src={image} />
+            <img className="w-25" src={image} alt={title} />
             <div className="w-50 d-flex flex-column justify-content-center align-items-start ps-4 text-start">
               <p className="fs-4">{category}</p>
               <h5>{title}</h5>

@@ -1,5 +1,5 @@
 // here we download & set/list product details on store // it's path="/"&first comp in App.js <Routes>
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { setProducts } from "../redux/actions/ProduceActions.js";
@@ -16,6 +16,7 @@ const ProductListing = () => {
         // , { headers: { "Accept-Encoding": "gzip" } }
       )
       .then((response) => {
+        console.log(response, " fetched data ProductListing.js");
         dispatch(setProducts(response.data));
         setHasRes(true);
       })
@@ -28,6 +29,6 @@ const ProductListing = () => {
   useEffect(() => {
     fetchProducts();
   }, []);
-  return <div>{hasRes && <ProductComponent/>}</div>;
+  return <div>{hasRes ? <ProductComponent /> : <h2>Data didn't loaded!</h2>}</div>;
 };
 export default ProductListing;

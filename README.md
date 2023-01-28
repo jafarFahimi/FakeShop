@@ -3,3 +3,5 @@ Important Other Technologies Used: Redux(v-4.2), Bootstrap(v-5.2), axios (v-1.2)
 API used for getting fetching data: https://fakestoreapi.com/products
 
 # Deployed With Love ❤️
+
+// "homepage": "https://jafarFahimi.github.io/FakeShop",

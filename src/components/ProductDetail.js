@@ -42,14 +42,13 @@ const ProductDetail = () => {
       ) : (
         <section className="productDetail__container">
           <div className="productItem">
-            <div>
-              <img className="w-25" src={image} alt={title} />
+            <div className="productItem__image-container">
+              <img src={image} alt={title} />
             </div>
             <div className="productDetail__container-detail">
-              <p className="fs-4">{category}</p>
               <h5>{title}</h5>
-              <p className="text-lead">{description}</p>
-              <b className="d-inline-block badge bg-warning py-2 px-3 text-dark">{price} $</b>
+              <p className="text-lead text-start">{description}</p>
+              <b className="d-inline-block badge bg-warning py-2 my-2 px-3 text-dark">{price} $</b>
               <a class="btn btn-success btn-md" href="#" role="button">
                 Add to Cart
               </a>

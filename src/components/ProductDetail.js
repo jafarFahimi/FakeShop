@@ -9,7 +9,7 @@ import "../styles/productDetail.css";
 const ProductDetail = () => {
   // const param = useParams();
   const product = useSelector((state) => state.product);
-  const { image, title, category, description, price } = product;
+  const { image, title, description, price } = product;
   const dispatch = useDispatch();
   // const { productId } = param;
   const { productId } = useParams();

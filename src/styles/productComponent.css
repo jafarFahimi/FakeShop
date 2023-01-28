@@ -1,0 +1,24 @@
+.allProduct {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: lightblue;
+  align-items: center;
+}
+.productLink {
+  text-decoration: none;
+  color: black;
+  width: 300px;
+  margin-bottom: 20px;
+}
+.productLink__img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-bottom: 10px;
+}
+.productLink__img {
+  width: 100%;
+  height: 100%;
+}

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { removeSelectedProduct, selectedProduct } from "../redux/actions/ProduceActions";
+import "../styles/productDetail.css";
 
 const ProductDetail = () => {
   // const param = useParams();
@@ -39,10 +40,12 @@ const ProductDetail = () => {
       {Object.keys(product).length === 0 ? (
         <h2 className="mt-5">Loading ...</h2>
       ) : (
-        <div className="container d-flex justify-content-center align-items-center bg-info vh-100">
-          <div className="w-75 d-flex justify-content-center align-items-center border-5 shadow">
-            <img className="w-25" src={image} alt={title} />
-            <div className="w-50 d-flex flex-column justify-content-center align-items-start ps-4 text-start">
+        <section className="productDetail__container">
+          <div className="productItem">
+            <div>
+              <img className="w-25" src={image} alt={title} />
+            </div>
+            <div className="productDetail__container-detail">
               <p className="fs-4">{category}</p>
               <h5>{title}</h5>
               <p className="text-lead">{description}</p>
@@ -52,7 +55,7 @@ const ProductDetail = () => {
               </a>
             </div>
           </div>
-        </div>
+        </section>
       )}
     </div>
   );

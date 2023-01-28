@@ -8,7 +8,7 @@ const ProductComponent = () => {
     const { price, id, title, image, category, description, rating } = product;
     return (
       <Link key={id} to={`/product/${id}`} className="productLink">
-        <div className="text-start w-75">
+        <div className="productLink-container text-start w-75">
           <div className="productLink__img-container">
             <img src={image} className="productLink__img" alt={title} />
           </div>
